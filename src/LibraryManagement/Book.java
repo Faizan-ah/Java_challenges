@@ -1,17 +1,27 @@
-package OOPBasics;
+package LibraryManagement;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Book {
+    private String id;
     private String title;
     private String isbn;
-    private Author[] authors;
+    private ArrayList<Author> authors;
     private Date borrowedAt;
 
-    public Book(String title, String isbn, Author[] authors) {
+    public Book(String id,String title, String isbn) {
+        this.id=id;
         this.title = title;
         this.isbn = isbn;
-        this.authors = authors != null ? authors : new Author[0];
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -30,12 +40,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Author[] getAuthors() {
+    public ArrayList<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(Author[] authors) {
-        this.authors = authors != null ? authors : new Author[0];
+    public void setAuthors(ArrayList<Author> authors) {
+        this.authors = authors;
     }
 
     public Date getBorrowedAt() {
